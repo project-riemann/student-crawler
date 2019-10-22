@@ -41,9 +41,23 @@ def insert_inep(connection, cpf, NU_INSCRICAO, NU_ANO):
             '''.format(cpf, NU_INSCRICAO, NU_ANO)
         )
         connection.commit()
-        print("Insertion inpe done", cpf, NU_INSCRICAO, NU_ANO)
+        print("Insertion inepe done", cpf, NU_INSCRICAO, NU_ANO)
     except Exception as e:
         print("error trying to insert", cpf, NU_INSCRICAO, NU_ANO)
         print(e)
 
-
+def insert_enem(connection, cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(
+            '''
+            INSERT INTO Enem
+            (cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+            VALUES("{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}");
+            '''.format(cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+        )
+        connection.commit()
+        print("Insertion enem done", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+    except Exception as e:
+        print("error trying to insert", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+        print(e)
