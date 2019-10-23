@@ -14,6 +14,7 @@ def insert_jovem(connection, cpf, nome, data_nascimento):
         print("error trying to insert", cpf, nome, data_nascimento)
         print(e)
 
+
 def insert_carteira(connection, cpf, nome_mae, nome_pai, instituicao, email):
     cursor = connection.cursor()
     try:
@@ -25,10 +26,13 @@ def insert_carteira(connection, cpf, nome_mae, nome_pai, instituicao, email):
             '''.format(cpf, nome_mae, nome_pai, instituicao, email)
         )
         connection.commit()
-        print("Insertion carteira done", cpf, nome_mae, nome_pai, instituicao, email)
+        print("Insertion carteira done", cpf,
+              nome_mae, nome_pai, instituicao, email)
     except Exception as e:
-        print("error trying to insert", cpf, nome_mae, nome_pai, instituicao, email)
+        print("error trying to insert", cpf,
+              nome_mae, nome_pai, instituicao, email)
         print(e)
+
 
 def insert_inep(connection, cpf, NU_INSCRICAO, NU_ANO):
     cursor = connection.cursor()
@@ -46,6 +50,7 @@ def insert_inep(connection, cpf, NU_INSCRICAO, NU_ANO):
         print("error trying to insert", cpf, NU_INSCRICAO, NU_ANO)
         print(e)
 
+
 def insert_enem(connection, cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada):
     cursor = connection.cursor()
     try:
@@ -57,7 +62,9 @@ def insert_enem(connection, cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, T
             '''.format(cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
         )
         connection.commit()
-        print("Insertion enem done", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+        print("Insertion enem done", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores,
+              numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
     except Exception as e:
-        print("error trying to insert", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores, numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
+        print("error trying to insert", cpf, NU_INSCRICAO, NU_ANO, TP_SEXO, NACIONALIDADE, TP_ESCOLA, TP_ESTADO_CIVIL, renda_mensal, pessoas_na_casa, residencia_tipo, numero_tvs, numero_computadores,
+              numero_automoveis, numero_geladeira, numero_telefone_fixo, numero_acesso_internet, numero_tv_assinatura, numero_aspirador_po, numero_empregados, numero_banheiros, ja_exerceu_ativ_remunerada)
         print(e)
